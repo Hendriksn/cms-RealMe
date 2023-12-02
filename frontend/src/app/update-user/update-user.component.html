@@ -1,0 +1,58 @@
+<body style="border: none">
+<form [formGroup]="UpdateForm" >
+  <div class="modal-header">
+    <h4 class="modal-title">Profil</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss()">
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="form-group" [class.error]="UpdateForm.controls['username'].dirty && UpdateForm.hasError('required' , 'username')">
+      <label for="updateUsername">Username</label>
+      <input  formControlName="username" type="text" class="form-control" id="updateUsername" [(ngModel)]="username">
+      <small *ngIf="UpdateForm.controls['username'].dirty && UpdateForm.hasError('required' , 'username')" class="text-danger">Username is required</small>
+    </div>
+  </div>
+  <div class="modal-body">
+    <div class="form-group" [class.error]="UpdateForm.controls['givenName'].dirty && UpdateForm.hasError('required' , 'givenName')">
+      <label for="updateVorname">Vorname</label>
+      <input  formControlName="givenName" type="text" class="form-control" id="updateVorname"  [(ngModel)]="givenName">
+      <small *ngIf="UpdateForm.controls['givenName'].dirty && UpdateForm.hasError('required' , 'givenName')" class="text-danger">givenName is required</small>
+    </div>
+  </div>
+  <div class="modal-body">
+  <div class="form-group" [class.error]="UpdateForm.controls['familyName'].dirty && UpdateForm.hasError('required' , 'familyName')">
+      <label for="updateNachname">Nachname</label>
+      <input  formControlName="familyName" type="text" class="form-control" id="updateNachname"  [(ngModel)]="familyName">
+      <small *ngIf="UpdateForm.controls['familyName'].dirty && UpdateForm.hasError('required' , 'familyName')" class="text-danger">Nachname is required</small>
+    </div>
+  </div>
+  <div class="modal-body">
+  <div class="form-group" [class.error]="UpdateForm.controls['age'].dirty && UpdateForm.hasError('required' , 'familyName')">
+      <label for="updateAlter">Alter</label>
+      <input  formControlName="age" type="text" class="form-control" id="updateAlter"  [(ngModel)]="age">
+      <small *ngIf="UpdateForm.controls['age'].dirty && UpdateForm.hasError('required' , 'age')" class="text-danger">Age is required</small>
+    </div>
+  </div>
+  <div class="modal-body">
+    <div class="form-group" [class.error]="UpdateForm.controls['email'].dirty && UpdateForm.hasError('required' , 'email')">
+      <label for="updateEMail">E-Mail</label>
+      <input formControlName="email" type="text" class="form-control" id="updateEMail"  [(ngModel)]="email">
+      <small *ngIf="UpdateForm.controls['email'].dirty && UpdateForm.hasError('required' , 'email')" class="text-danger">E-Mail is required</small>
+
+    </div>
+  </div>
+  <div class="modal-body">
+    <div class="form-group" [class.error]="UpdateForm.controls['pb'].dirty && UpdateForm.hasError('' , 'pb')">
+      <label for="updateEMail">Profilbild</label>
+      <input  (change)="handleFileInput($event)"formControlName="pb" type="file" class="form-control" id="pb"  [(ngModel)]="pb">
+    </div>
+  </div>
+  <div class="modal-footer align-items-center justify-content-center">
+    <button type="button" class="button-63"
+            (click)="activeModal.dismiss()">Schließen
+    </button>
+    <button type="button" class="button-62" (click)="save()">Speichern</button>
+  </div>
+</form>
+</body>
+

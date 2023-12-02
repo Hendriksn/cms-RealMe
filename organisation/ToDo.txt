@@ -1,0 +1,10 @@
+Aufgaben:
+
+- Alle nötigen Komponenten festlegen und erstellen
+- Das genaue Interface festlegen (Wireframe?)
+- Mockups erstellen -->
+- USP festlegen --> Rating von Bildern
+- Mockups erstellen -->
+- Rollen verteilen --> Talia, Hendrik frontend; Marc backend
+
+

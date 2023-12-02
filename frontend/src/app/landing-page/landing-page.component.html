@@ -1,0 +1,42 @@
+
+<body>
+<app-header></app-header>
+<div class="row">
+  <div id="bg">
+
+
+    <div *ngFor="let picture of pictures.data" id="cards" class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card" style="background-color: white;   box-shadow: 0px 8px 15px rgba(89, 89, 89); justify-content: center">
+          <div class="card-header">
+            <img id="pb2" class="rounded"
+                 src="{{serverAdress+picture.attributes.creator.data.attributes.profilePicture.data.attributes.url}}"
+                 (click)="toprofile(picture.attributes.creator.data.attributes.username)">
+            <span> {{picture.attributes.creator.data.attributes.username}}</span>
+          </div>
+          <img src="{{serverAdress+picture.attributes.file.data.attributes.url}}">
+
+            <div class="card-body">
+              <div>
+                <ngb-rating (click)="clickRating(picture.id)"  [formControl]="ratingcontrol" (hover)="0"></ngb-rating>
+                <pre style="display: none">Selected: <b>{{selected}}</b></pre>
+              </div>
+
+
+              <div style="justify-content: end;display: flex">
+              </div>
+              <span style="color: #BABABA">{{picture.attributes.createdAt | date: 'dd.MM.yyyy'}}</span>
+              <a style="font-weight: bold; color: #B85125; margin-right: -20px" onclick="location.href= 'mailto:info@realme.de?subject=Content%20melden&amp;body=Benutzername%20des%20Content%20Creators:%0D%0A%0D%0AGrund%20des%20Meldens:%0D%0A%0D%0ANachricht:';">
+                !
+              </a>
+            </div>
+            <button id="btn2" style="border-radius: 0px" class="button-blue" (click)="clickedComment(picture.id)">
+              <span> <fa-icon [icon]="faComment"></fa-icon></span>
+            </button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+

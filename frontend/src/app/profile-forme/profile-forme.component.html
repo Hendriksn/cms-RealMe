@@ -1,0 +1,78 @@
+<body>
+
+<div class="row">
+<app-header></app-header>
+  <div id="upperbg">
+    <div class="container">
+      <div class="mt-5 text-center">
+        <h4 id="username" class="mb-0">{{myProfile.givenName}} {{myProfile.familyName}}</h4>
+      </div>
+      <div class="profile">
+        <img id="pb" src="{{serverAdress+myProfile.profilePicture.formats.thumbnail.url}}" class="rounded">
+      </div>
+      <div class="mt-5 text-center">
+        <button class="button-blue" style="margin-right: 10px" (click)="UpdateProfile()">Profil bearbeiten</button>
+        <button class="button-blue" style="align-content: start" (click)="UploadPicture()">Bild hochladen</button> <br><br>
+        <button class="button-blue" (click)="logoutClicked()">Abmelden</button>
+        <button id="deletebtn" class="button-blue" (click)="deleteAcc()">Profil löschen</button>
+
+
+        <div class="d-flex justify-content-between align-items-center mt-4 px-4">
+          <div class="stats">
+            <p class="b" style="color: black; font-size: 20px" (click)="clickedOnFolgeIch(myProfile.id)">FOLLOWS
+            </p>
+            <p></p>
+            <span>{{followI.meta.pagination.total}}</span>
+          </div>
+          <div class="stats">
+            <p style="color: black; text-decoration: none; font-size: 20px">Score</p>
+            <p></p>
+            <span>{{rateScore}}</span>
+          </div>
+          <div class="stats">
+            <p style="color: black; text-decoration: none; font-size: 20px"
+               (click)="clickedOnFollower(myProfile.id)">FOLLOWER
+            </p>
+            <p></p>
+            <span>{{follower.meta.pagination.total}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div *ngFor="let picture of pictures.data" id="cards" class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card" style="background-color: white;   box-shadow: 0px 8px 15px rgba(89, 89, 89); justify-content: center">
+          <div class="card-header">
+            <img id="pb2" class="rounded"
+                 src="{{serverAdress+myProfile.profilePicture.formats.thumbnail.url}}">
+            <span> {{myProfile.username}}</span>
+          </div>
+          <img src="{{serverAdress+picture.attributes.file.data.attributes.url}}">
+
+          <div class="card-body">
+            <div>
+              <ngb-rating (click)="clickRating(picture.id)" [formControl]="ratingcontrol" (hover)="0"></ngb-rating>
+              <pre style="display: none">Selected: <b>{{selected}}</b></pre>
+            </div>
+            <div style="justify-content: end;display: flex">
+            </div>
+            <span style="color: #BABABA">{{picture.attributes.createdAt | date: 'dd.MM.yyyy'}}</span>
+            <a style="font-weight: bold; color: #B85125; margin-right: -20px" onclick="location.href= 'mailto:info@realme.de?subject=Content%20melden&amp;body=Benutzername%20des%20Content%20Creators:%0D%0A%0D%0AGrund%20des%20Meldens:%0D%0A%0D%0ANachricht:';">
+              !
+            </a>
+          </div>
+          <button id="btn2" style="border-radius: 0px" class="button-blue" (click)="clickedComment(picture.id)">
+            <span> <fa-icon [icon]="faComment"></fa-icon></span>
+          </button>
+          <button id="btn3" style="border-radius: 0px" class="button-blue" (click)="clickedDelete(picture.id)">
+            <span> <fa-icon [icon]="faTrash"></fa-icon></span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</body>

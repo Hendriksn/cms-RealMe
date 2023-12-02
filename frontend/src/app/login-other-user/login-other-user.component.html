@@ -1,0 +1,68 @@
+
+<body>
+
+    <div class="container">
+      <h1> REALME </h1>
+      <form [formGroup]="loginForm" class="form__label--floating" id="loginform">
+
+        <div class="form-group" [class.error]="loginForm.controls['username'].dirty && loginForm.hasError('required' , 'username')">
+          <input formControlName="username" type="text" class="form-control" id="username" placeholder="Username" [(ngModel)]="username">
+          <small *ngIf="loginForm.controls['username'].dirty && loginForm.hasError('required' , 'username')" class="text-danger">Username is required</small>
+        </div>
+
+
+        <div class="input-group" [class.error]="loginForm.controls['username'].dirty && loginForm.hasError('required' , 'username')">
+          <input formControlName="password" [type]="type" class="form-control" id="loginpasswort" placeholder="Passwort">
+          <span (click)="showhide()"class="input-group-text" id="basic-addon2"><fa-icon  [icon]="faEye"></fa-icon> </span>
+        </div>
+        <p id="pmessage" *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required' , 'password')" class="text-danger">Password is required</p>
+
+        <div class="row">
+          <button id="registerbutton" type="submit" class="button-62" (click)="login()">
+            Anmelden
+          </button>
+        </div>
+      </form>
+    </div>
+  <div id="waves">
+  <svg
+    class="waves"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 24 150 28"
+    preserveAspectRatio="none"
+    shape-rendering="auto"
+  >
+
+    <defs>
+      <path
+        id="gentle-wave"
+        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+      />
+    </defs>
+
+    <g class="parallax">
+      <use
+        xlink:href="#gentle-wave"
+        x="48"
+        y="0"
+        fill="rgba(255,255,255,0.7"
+      />
+      <use
+        xlink:href="#gentle-wave"
+        x="48"
+        y="3"
+        fill="rgba(255,255,255,0.5)"
+      />
+      <use
+        xlink:href="#gentle-wave"
+        x="48"
+        y="5"
+        fill="rgba(255,255,255,0.3)"
+      />
+      <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+    </g>
+  </svg>
+</div>
+
+</body>

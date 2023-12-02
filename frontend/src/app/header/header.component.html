@@ -1,0 +1,27 @@
+
+  <nav class="navbar navbar-expand-xl navbar-toggleable-md">
+    <span id="logo" class="navbar-brand"> REALME
+      <img src="./assets/img/WhatsApp%20Image%202023-01-15%20at%2015.50.39.jpeg" alt="RealMe" style="border-radius: 50%" width="60" height="60">
+    </span>
+    <button (click)="isCollapsed = !isCollapsed" class="navbar-toggler ml-auto custom-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar4">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse flex-row justify-content-md-end "  id="collapsingNavbar4" [ngbCollapse]="isCollapsed" >
+      <ul  class="navbar-nav nav align-content-end ms-auto ">
+
+        <li class="nav-item active" style="margin-bottom: 10px; margin-right: -10px">
+          <button id="btnforyou" role="button" class="button-orange" (click)="topicturelistforyou()">
+            FORYOU
+          </button>
+
+          <button id="btndiscovery" role="button" class="button-gray" (click)="todiscovery()">
+            <span> <fa-icon [icon]="faMagnifyingGlass"></fa-icon></span>
+          </button>
+
+          <button id="btnuser" role="button" class="button-gray" (click)="toprofileforme()">
+            <span> <fa-icon [icon]="faUser"></fa-icon></span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>

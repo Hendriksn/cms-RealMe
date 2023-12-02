@@ -1,0 +1,17 @@
+<app-header></app-header>
+<div class="row">
+<div id="upperbg">
+  <div class="container">
+  <h1 style="margin-top: 100px">FOLLOWS</h1>
+<ul *ngFor="let follower of follower.data" class="list-group" style="margin-top: 20px">
+  <li class="list-group-item d-flex justify-content-between align-items-center" style="height: 90px">
+    <img class="rounded" id="pb2markus" style="height: 60px" src="{{serverAdress+follower.attributes.follow_in.data.attributes.profilePicture.data.attributes.url}}">
+    <span style="align-content: center">{{follower.attributes.follow_in.data.attributes.givenName}}</span>
+    <span>
+      <button type="button" class="button-62">&#10003;</button>
+    </span>
+  </li>
+</ul>
+</div>
+</div>
+</div>

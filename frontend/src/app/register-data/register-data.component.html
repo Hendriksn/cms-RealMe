@@ -1,0 +1,99 @@
+
+<body>
+
+<h1> REALME </h1>
+
+
+<div class="container-fluid">
+  <form [formGroup]="SignUpForm" id="registerform">
+
+    <div class="form-group" [class.error]="SignUpForm.controls['username'].dirty && SignUpForm.hasError('required' , 'username')">
+      <input  formControlName="username" type="text" class="form-control " id="username" aria-describedby="emailHelp"
+             placeholder="Nutzername">
+      <small *ngIf="SignUpForm.controls['username'].dirty && SignUpForm.hasError('required' , 'username')" class="text-danger">Username is required</small>
+    </div>
+
+    <div class="form-group" [class.error]="SignUpForm.controls['givenName'].dirty && SignUpForm.hasError('required' , 'givenName')">
+      <input formControlName="givenName" type="text" class="form-control" id="givenName" placeholder="Vorname">
+      <small *ngIf="SignUpForm.controls['givenName'].dirty && SignUpForm.hasError('required' , 'givenName')" class="text-danger">givenName is required</small>
+
+    </div>
+
+    <div class="form-group" [class.error]="SignUpForm.controls['familyName'].dirty && SignUpForm.hasError('required' , 'familyName')">
+      <input  formControlName="familyName" type="text" class="form-control" id="familyName" placeholder="Nachname">
+      <small *ngIf="SignUpForm.controls['familyName'].dirty && SignUpForm.hasError('required' , 'familyName')" class="text-danger">Family Name is required</small>
+
+    </div>
+
+    <div class="form-group" [class.error]="SignUpForm.controls['age'].dirty && SignUpForm.hasError('required' , 'age')">
+      <input formControlName="age" type="text" class="form-control" id="age" placeholder="Alter">
+      <small *ngIf="SignUpForm.controls['age'].dirty && SignUpForm.hasError('required' , 'age')" class="text-danger">Age is required</small>
+
+    </div>
+
+    <div class="input-group" [class.error]="SignUpForm.controls['password'].dirty && SignUpForm.hasError('required' , 'password')">
+      <input  formControlName="password" [type]="type" class="form-control" id="loginpasswort" placeholder="Passwort">
+      <span (click)="showhide()" class="input-group-text" id="basic-addon2"><fa-icon  [icon]="faEye"></fa-icon> </span>
+    </div>
+    <p id="pmessage" *ngIf="SignUpForm.controls['password'].dirty && SignUpForm.hasError('required' , 'password')" class="text-danger">Password is required</p>
+
+
+    <div class="form-group" [class.error]="SignUpForm.controls['email'].dirty && SignUpForm.hasError('required' , 'email')">
+      <input  formControlName="email" type="email" class="form-control" id="email" placeholder="E-Mail">
+      <small *ngIf="SignUpForm.controls['email'].dirty && SignUpForm.hasError('required' , 'email')" class="text-danger">E-Mail is required</small>
+    </div>
+
+    <div class="form-group" id="pbdiv">
+      <label id="pblabel" for="pb">Profilbild</label>
+      <input (change)="handleFileInput($event)" formControlName="pb" type="file" class="form-control" id="pb">
+
+    </div>
+
+    <div class="row">
+      <button id="registerbutton" type="submit" class="btn button-container button-62" (click)="signUp()" >Registrieren</button>
+    </div>
+  </form>
+</div>
+
+<div id="waves">
+  <svg
+    class="waves"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 24 150 28"
+    preserveAspectRatio="none"
+    shape-rendering="auto"
+  >
+
+    <defs>
+      <path
+        id="gentle-wave"
+        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+      />
+    </defs>
+
+    <g class="parallax">
+      <use
+        xlink:href="#gentle-wave"
+        x="48"
+        y="0"
+        fill="rgba(255,255,255,0.7"
+      />
+      <use
+        xlink:href="#gentle-wave"
+        x="48"
+        y="3"
+        fill="rgba(255,255,255,0.5)"
+      />
+      <use
+        xlink:href="#gentle-wave"
+        x="48"
+        y="5"
+        fill="rgba(255,255,255,0.3)"
+      />
+      <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+    </g>
+  </svg>
+</div>
+
+</body>

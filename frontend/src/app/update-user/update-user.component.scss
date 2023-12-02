@@ -1,0 +1,69 @@
+body{
+  background-color: #7CA1AB;
+  height: auto;
+  border-radius: 5px;
+  border: solid;
+}
+
+.button-63 {
+  background: linear-gradient(to bottom right,  #d3d3d3, #BABABA);
+  border: 0;
+  border-radius: 8px;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  box-shadow: 0px 8px 15px rgba(89, 89, 89);
+
+}
+
+.button-63:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(211, 211, 211, 1), .125rem .125rem 1rem rgba(186, 186, 186, 1);
+}
+.button-63:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(211, 211, 211,1), .125rem .125rem 1rem rgba(186, 186, 186, 1);
+}
+
+.button-62 {
+  background: linear-gradient(to bottom right, #B85125, #D45D2A);
+  border: 0;
+  border-radius: 8px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  box-shadow: 0px 8px 15px rgba(89, 89, 89);
+
+}
+
+.button-62:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(184,81,37, 1), .125rem .125rem 1rem rgba(212,93,42, 1);
+}
+
+.button-62:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(184,81,37 ,1), .125rem .125rem 1rem rgba(212,93,42, 1);
+}

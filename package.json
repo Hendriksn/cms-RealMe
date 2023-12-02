@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.2.1",
+    "@strapi/plugin-documentation": "^4.5.3",
+    "strapi-plugin-ratings": "^1.1.9"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "evaluations",
+  "info": {
+    "singularName": "evaluation",
+    "pluralName": "evaluations",
+    "displayName": "Evaluations",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "points": {
+      "type": "string"
+    },
+    "picture": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::picture.picture",
+      "inversedBy": "evaluations"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

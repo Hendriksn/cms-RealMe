@@ -1,0 +1,30 @@
+<body>
+<form [formGroup]="UploadForm" id="registerform">
+  <div class="modal-header">
+    <h4 class="modal-title">Bild hochladen</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss()">
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="form-group">
+      <label for="description">Beschreibung</label>
+      <!-- <input type="textarea" class="form-control" id="description">-->
+      <textarea formControlName="description" class="form-control" id="description" cols="35" rows="4"></textarea>
+    </div>
+  </div>
+
+  <div class="modal-body">
+    <div class="form-group">
+      <label for="picture">Bild</label>
+      <input (change)="handleFileInput($event)" formControlName="picture" id="picture" type="file" class="file-upload" id="picture">
+    </div>
+  </div>
+
+  <div class="modal-footer align-items-center justify-content-center">
+    <button type="button" class="button-63"
+            (click)="activeModal.dismiss()">Schließen</button>
+    <button type="button" class="button-62" (click)="save()">Speichern</button>
+  </div>
+</form>
+</body>
+

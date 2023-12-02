@@ -1,0 +1,68 @@
+<body>
+<div class="row">
+  <app-header></app-header>
+  <div id="upperbg">
+    <div class="container">
+      <div class="mt-5 text-center">
+        <h4 id="username" class="mb-0">{{profile[0].givenName +" "+ profile[0].familyName}}</h4>
+      </div>
+      <div class="profile">
+        <img id="pb" src="{{serverAdress+profile[0].profilePicture.formats.thumbnail.url}}" class="rounded">
+      </div>
+      <div class="mt-5 text-center">
+        <button *ngIf="myProfile.id != profile[0].id && checkFollow.meta.pagination.total < 1" class="button-blue" style="margin-right: 10px" (click)="sendFollow(profile[0].id)">Folgen</button>
+        <button *ngIf="myProfile.id != profile[0].id && checkFollow.meta.pagination.total > 0" class="button-blue" style="margin-right: 10px" (click)="sendDeFollow(checkFollow.data[0].id)">Entfolgen</button>
+        <div class="d-flex justify-content-between align-items-center mt-4 px-4">
+          <div class="stats">
+            <p class="b" style="color: black; font-size: 20px" (click)="clickedOnFolgeIch(profile[0].id)">FOLLOWS
+            </p>
+            <p></p>
+            <span>{{followI.meta.pagination.total}}</span>
+          </div>
+          <div class="stats">
+            <p style="color: black; text-decoration: none; font-size: 20px">SCORE</p>
+            <p></p>
+            <span>{{rateScore}}</span>
+          </div>
+          <div class="stats">
+            <p style="color: black; text-decoration: none; font-size: 20px"
+               (click)="clickedOnFollower(profile[0].id)">FOLLOWER
+            </p>
+            <p></p>
+            <span>{{follower.meta.pagination.total}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngFor="let picture of pictures.data" id="cards" class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card" style="background-color: white;   box-shadow: 0px 8px 15px rgba(89, 89, 89); justify-content: center">
+          <div class="card-header">
+            <img id="pb2" class="rounded"
+                 src="{{serverAdress+profile[0].profilePicture.formats.thumbnail.url}}">
+            <span> {{profile[0].username}}</span>
+          </div>
+          <img src="{{serverAdress+picture.attributes.file.data.attributes.url}}">
+
+          <div class="card-body">
+            <div>
+              <ngb-rating  (click)="clickRating(picture.id)" [formControl]="ratingcontrol" (hover)="0"></ngb-rating>
+              <pre style="display: none">Selected: <b>{{selected}}</b></pre>
+            </div>
+            <div style="justify-content: end;display: flex">
+            </div>
+            <span style="color: #BABABA">{{picture.attributes.createdAt | date: 'dd.MM.yyyy'}}</span>
+            <a style="font-weight: bold; color: #B85125; margin-right: -20px" onclick="location.href= 'mailto:info@realme.de?subject=Content%20melden&amp;body=Benutzername%20des%20Content%20Creators:%0D%0A%0D%0AGrund%20des%20Meldens:%0D%0A%0D%0ANachricht:';">
+              !
+            </a>
+          </div>
+          <button id="btn2" style="border-radius: 0px" class="button-blue" (click)="clickedComment(picture.id)">
+            <span> <fa-icon [icon]="faComment"></fa-icon></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>

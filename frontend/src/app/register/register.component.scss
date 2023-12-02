@@ -1,0 +1,201 @@
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: black;
+  font-family: Araboto;
+  font-weight: bold;
+  font-size: 50px;
+  background-color: #7CA1AB;
+  padding-top: 40px;
+}
+
+body{
+  background-color: #7CA1AB;
+  height: auto;
+  width: auto;
+}
+
+
+.row {
+  justify-content: center;
+}
+
+#loginform{
+  align-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+.button-container{
+  display:flex;
+  align-content: center;
+  justify-content: center;
+  position: relative;
+}
+
+div{
+  color: black;
+  text-align: start;
+  align-items: start;
+}
+div.input-group{
+  align-items: center;
+}
+
+path{
+  justify-content: center;
+}
+input{
+  border-color: black;
+  box-shadow: 0px 5px 5px rgba(89,89,89);
+  font-family: Blinker, sans-serif;
+  margin-top: 40px;
+
+}
+
+#pmessage{
+  text-align: start;
+  font-size: 14px
+}
+
+button {
+  margin-top: 70px;
+  align-content: center;
+  text-align: center;
+  position: relative;
+  width: 344px;
+  height: 47px;
+  margin-bottom: 50px;
+  font-family: Blinker, sans-serif;
+  font-weight: bold;
+
+  &:hover {
+    cursor: pointer;
+  }
+  box-shadow: 0px 8px 15px rgba(89, 89, 89);
+}
+
+span{
+  border-color: black;
+  box-shadow: 0px 5px 5px rgba(89,89,89);
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+#waves{
+  padding-top: 300px;
+  bottom: 0px;
+  width: 100%;
+}
+
+svg {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+}
+.button-62 {
+  background: linear-gradient(to bottom right, #B85125, #D45D2A);
+  border: 0;
+  border-radius: 8px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+.button-62:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(184,81,37, 1), .125rem .125rem 1rem rgba(212,93,42, 1);
+}
+
+.button-62:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(184,81,37 ,1), .125rem .125rem 1rem rgba(212,93,42, 1);
+}
+
+@import url(//fonts.googleapis.com/css?family=Lato:300:400);
+
+.header {
+  position: relative;
+  background-color: #7CA1AB;
+}
+.inner-header {
+  width: 100%;
+  height: 50vh;
+}
+.waves {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  margin-bottom: -7px; /*Fix for safari gap*/
+  min-height: 100px;
+  max-height: 150px;
+}
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+.button-63 {
+  background: linear-gradient(to bottom right,  #d3d3d3, #BABABA);
+  border: 0;
+  border-radius: 8px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+.button-63:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(211, 211, 211, 1), .125rem .125rem 1rem rgba(186, 186, 186, 1);
+}
+.button-63:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(211, 211, 211,1), .125rem .125rem 1rem rgba(186, 186, 186, 1);
+}
